@@ -20,6 +20,8 @@ FOREIGN KEY (Protaganist) REFERENCES Characters(Name);*
 RENAME COLUMN Protaganist TO Protagonist;* -- I spelled it wrong lol.--
 *ALTER TABLE Anime 
 ADD UNIQUE (Name);* --This will be used in the ability foreign key
+*ALTER TABLE Anime 
+MODIFY MAL_SCORE DEC(3,2);* I realized I did not have enough sig figs.--
 
 --Table for all the Characters from the animes.--
 CREATE TABLE Characters (
