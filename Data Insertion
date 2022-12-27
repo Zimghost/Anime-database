@@ -1,0 +1,39 @@
+--While doing my first insert into the Anime table, I realized based on my foreign key constraint that I would not
+be able to put in a protagonist until I have the same value in the character table. However, I can not add to the character table,
+without an anime_id. Therefore I will have to fill out the anime without the protagonist and fill in later.--
+
+INSERT INTO Anime(Name,Release_Year,Genre,MAL_Score,Ongoing)
+VALUES('Fullmetal Alchemist: Brotherhood','2009','Action','9.21',0);
+*UPDATE Anime 
+SET MAL_Score = 9.11
+WHERE anime_id = 1;*
+--I had to change the anime_id to 2 because for some reason my auto_increment started at 2 instead of one.--
+--Once I figured out this worked, I went with a mass insert instead.--
+
+INSERT INTO Anime(Name,Release_Year,Genre,MAL_Score,Ongoing)
+VALUES('Steins Gate',2011,'Sci-Fi','9.08',0),
+('Hunter X Hunter 2011',2011,'Action','9.04',0),
+('A Silent Voice',2016,'Drama','8.94',0),
+('Code Geass: Lelouch of the Rebellion',2006,'Action','8.70',0),
+('Your Name',2016,'Supernatural','8.85',0),
+('Monster',2005,'Drama','8.85',0),
+('Chainsaw Man',2022,'Action','8.82',1),
+('Demon Slayer',2019,'Action','8.83',1),
+('Cowboy Bebop',1998,'Sci-Fi','8.75',0),
+('Hajime no Ippo',2000,'Sports','8.75',0),
+('Vinland Saga',2019,'Action','8.73',1),
+('Odd Taxi',2021,'Mystery','8.71',1),
+('Spy x Family',2022,'Action','8.70',1),
+('Great Teacher Onizuka',1999,'Comedy','8.69',0),
+('One Piece',1999,'Action','8.68',1),
+('Made in Abyss',2017,'Adventure','8.67',0),
+('Violet Evergarden',2018,'Drama','8.67',0),
+('Jujutsu Kaisen',2020,'Action','8.66',1),
+('Cyberpunk: Edgerunners',2022,'Action','8.64',0),
+('Gurren Lagann',2007,'Action','8.63',0),
+('Ping Pong the Animation',2014,'Sports','8.62',0),
+('Death Note',2006,'Supernatural','8.62',0),
+('Ranking of Kings',2021,'Adventure','8.57',0),
+('Bleach',2004,'Action','7.90',1),
+('Dragon Ball Z',1989,'Action','8.16',0),
+('Naruto',2002,'Action','7.98',0)
