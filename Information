@@ -1,0 +1,36 @@
+--Table for all of the Animes that I will insert values into.--
+CREATE TABLE Anime (
+    Anime_Id INT NOT NULL AUTO_INCREMENT,
+    Name VARCHAR(255),
+    Release_Year INT,
+    Genre VARCHAR(255),
+    MAL_Score DEC(2,2),
+    Protaganist VARCHAR(255),
+    Ongoing BOOLEAN,
+    CONSTRAINT PK_Anime PRIMARY KEY (Anime_Id)
+);
+--Modifications to the already made table.--
+*ALTER TABLE Anime 
+MODIFY COLUMN Release_Year YEAR;*
+*ALTER TABLE Anime
+ADD CONSTRAINT FK_Protagonist 
+FOREIGN KEY (Protaganist) REFERENCES Characters(Name);*
+*ALTER TABLE Anime
+RENAME COLUMN Protaganist TO Protagonist;* -- I spelled it wrong lol.--
+
+--Table for all the Characters from the animes.--
+CREATE TABLE Characters (
+    Character_Id INT NOT NULL AUTO_INCREMENT,
+    Name VARCHAR(255),
+    Initial_Age INT,
+    Gender VARCHAR(1),
+    Hair_Color VARCHAR(255),
+    CONSTRAINT PK_Characters PRIMARY KEY (Character_Id)
+);
+*ALTER TABLE Characters
+ADD UNIQUE (Name);*
+*ALTER TABLE Characters
+ADD COLUMN Anime_Id INT;*
+*ALTER TABLE Characters
+ADD CONSTRAINT FK_AnimeId
+FOREIGN KEY(Anime_Id) REFERENCES Anime(Anime_Id);*
