@@ -9,7 +9,8 @@ CREATE TABLE Anime (
     Ongoing BOOLEAN,
     CONSTRAINT PK_Anime PRIMARY KEY (Anime_Id)
 );
---Modifications to the already made table.--
+
+--Modifications to the Anime table.--
 *ALTER TABLE Anime 
 MODIFY COLUMN Release_Year YEAR;*
 *ALTER TABLE Anime
@@ -17,6 +18,8 @@ ADD CONSTRAINT FK_Protagonist
 FOREIGN KEY (Protaganist) REFERENCES Characters(Name);*
 *ALTER TABLE Anime
 RENAME COLUMN Protaganist TO Protagonist;* -- I spelled it wrong lol.--
+*ALTER TABLE Anime 
+ADD UNIQUE (Name);* --This will be used in the ability foreign key
 
 --Table for all the Characters from the animes.--
 CREATE TABLE Characters (
@@ -27,6 +30,8 @@ CREATE TABLE Characters (
     Hair_Color VARCHAR(255),
     CONSTRAINT PK_Characters PRIMARY KEY (Character_Id)
 );
+
+--Modifications to the Characters table.--
 *ALTER TABLE Characters
 ADD UNIQUE (Name);*
 *ALTER TABLE Characters
@@ -34,3 +39,19 @@ ADD COLUMN Anime_Id INT;*
 *ALTER TABLE Characters
 ADD CONSTRAINT FK_AnimeId
 FOREIGN KEY(Anime_Id) REFERENCES Anime(Anime_Id);*
+
+--Table for Character Abilites.--
+CREATE TABLE Abilites (
+    Ability_Id INT NOT NULL AUTO_INCREMENT,
+    Anime_Name VARCHAR(255),
+    Character_Name VARCHAR(255),
+    Ability VARCHAR(255),
+    Description LONGTEXT,
+    CONSTRAINT PK_Abilities PRIMARY KEY (Ability_Id),
+    CONSTRAINT FK_AbilitiesCName FOREIGN KEY (Character_Name) REFERENCES Characters(Name),
+    CONSTRAINT FK_AbilitiesAName FOREIGN KEY (Anime_Name) REFERENCES Anime(Name)
+);
+RENAME TABLE Abilites TO Abilities;
+
+
+
