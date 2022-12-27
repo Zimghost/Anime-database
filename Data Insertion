@@ -37,3 +37,89 @@ VALUES('Steins Gate',2011,'Sci-Fi','9.08',0),
 ('Bleach',2004,'Action','7.90',1),
 ('Dragon Ball Z',1989,'Action','8.16',0),
 ('Naruto',2002,'Action','7.98',0)
+
+--Data Insert into character table.--
+INSERT INTO Characters(Name,Initial_Age,Gender,Hair_Color,Anime_Id)
+VALUES('Edward Elric',16,'M','Blonde',2)
+-- My Mass Insert--
+INSERT INTO Characters(Name,Initial_Age,Gender,Hair_Color,Anime_Id)
+VALUES('Rintaro Okabe',18,'M','Black',3),
+('Gon Freecss',11,'M','Greenish Black',4),
+('Shoya Ishida',18,'M','Black',5),
+('Lelouch vi Britannia',17,'M','Light Black',6),
+('Taki Tachibana',17,'M','Brown',7),
+('Kenzo Tenma',28,'M','Black',8),
+('Denji',16,'M','Yellowish Brown',9),
+('Tanjiro Kamado',13,'M','Black and Red',10),
+('Spike Spiegel',27,'M','Dark Green',11),
+('Ippo Makunoichi',16,'M','Black',12),
+('Thorfinn',17,'M','Blond',13),
+('Hiroshi Odokawa',41,'M','NULL',14),
+('Anya Forger',6,'F','Light Pink',15),
+('Eikichi Onizuka',22,'M','Blond',16),
+('Monkey D. Luffy',17,'M','Black',17),
+('Riko',12,'F','Yellow',18),
+('Violet Evergarden',18,'F','Blonde',19),
+('Yuji Itadori',15,'M','Black and Pink',20),
+('David Martinez',17,'M','Dark Brown',21),
+('Simon',21,'M','Dark Blue',22),
+('Yutaka Hoshino',16,'M','Black',23),
+('Light Yagami',20,'M','Light Brown',24),
+('Bojji',13,'M','Black',25),
+('Ichigo Kurosaki',15,'M','Orange',26),
+('Goku',24,'M','Black',27),
+('Naruto Uzumaki',12,'M','Yellow',28)
+
+--After inserting the main protagonist of each show I put in. I used this query to update the protagonist column in
+the Anime table, all at once. I realized that after I start adding characters who are not the protagonist, 
+this would no longer work.--
+UPDATE Anime JOIN Characters
+SET Protagonist = Characters.Name
+WHERE (Anime.Anime_Id - 1) = Characters.Character_Id;
+
+--More inserts on the Character table.--
+INSERT INTO Characters(Name,Initial_Age,Gender,Hair_Color,Anime_Id)
+VALUES('Killua Zoldyck',11,'M','White',4),
+('Hisoka Morow',NULL,'M','Fuchsia',4),
+('Kurapika',17,'M','Blond',4),
+('Leorio Paradinight',19,'M','Black',4),
+('Biscuit Krueger',57,'F','Blonde',4),
+('C.C',16,'F','Light Green',6),
+('Kallen Kozuki',17,'F','Red',6),
+('Suzaku Kururugi',17,'M','Brown',6),
+('Shirley Fenette',17,'M','Orange',6),
+('Nunnally vi Britannia',14,'F','Sandy Brown',6),
+('Euphemia li Britannia',16,'F','Pink',6),
+('Villetta Nu',26,'F','Light Steel Blue',6),
+('Cornelia li Britannia',27,'F','Fuchsia',6),
+('Mitsuha Miyamizu',17,'F','Black',7),
+('Tsukasa Fujii',17,'M','Bluish-Black',7),
+('Miki Okudera',24,'F','Maroon',7),
+('Makima',25,'F','Light Red',9),
+('Aki Hayakawa',19,'M','Black',9),
+('Power',17,'F','Blonde',9)
+
+--More Inserts on the Characters Table.--
+INSERT INTO Characters(Name,Initial_Age,Gender,Hair_Color,Anime_Id)
+VALUES('Nezuko Kamado',12,'F','Black',10),
+('Muzan Kibutsuji',1000,'M','Black',10),
+('Zenitsu Agatsuma',16,'M','Blonde/Orange',10),
+('Inosuke Hashibira',15,'M','Black/Blue',10),
+('Kyojuro Rengoku',20,'M','Gold/Red',10),
+('Tengen Uzui',23,'M','White',10),
+('Jet Black',36,'M','Black',11),
+('Ein',NULL,'M',NULL,11),
+('Faye Valentine',22,'F','Violet',11),
+('Edward',13,'F','Red',11),
+('Mamoru Takamura',28,'M','Black',12),
+('Loid Forger',28,'M','Blond',15),
+('Yor Forger',27,'F','Black',15),
+('Bond Forger',NULL,'M','White',15),
+('Roronoa Zoro',19,'M','Green',17),
+('Shanks',27,'M','Red',17),
+('Nico Robin',28,'F','Black',17),
+('Nami',18,'F','Orange',17),
+('Vinsmoke Sanji',19,'M','Blond',17),
+('Tony Tony Chopper',15,'M',NULL,17),
+('Trafalgar D. Water Law',24,'M','Black',17),
+('Boa Hancock',29,'F','Black',17)
