@@ -55,5 +55,13 @@ CREATE TABLE Abilites (
 );
 RENAME TABLE Abilites TO Abilities;
 
+--Table for New Generation Anime--
+--This table was created based on the Anime table and classifes the Newer Generation animes.--
+CREATE TABLE NEW_GEN 
+AS (SELECT *
+    FROM Anime 
+    WHERE Release_Year >= 2015);
+    
+
 
 
