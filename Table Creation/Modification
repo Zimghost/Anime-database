@@ -53,7 +53,9 @@ CREATE TABLE Abilites (
     CONSTRAINT FK_AbilitiesCName FOREIGN KEY (Character_Name) REFERENCES Characters(Name),
     CONSTRAINT FK_AbilitiesAName FOREIGN KEY (Anime_Name) REFERENCES Anime(Name)
 );
-RENAME TABLE Abilites TO Abilities;
+
+--Modifications to the Abilities table.--
+*RENAME TABLE Abilites TO Abilities;*
 
 --Table for New Generation Anime--
 --This table was created based on the Anime table and classifes the Newer Generation animes.--
@@ -62,6 +64,24 @@ AS (SELECT *
     FROM Anime 
     WHERE Release_Year >= 2015);
     
+--Table for The Big Three Animes.--
+--This table was created to contain the characters, ratings, and abilities for the big three anime (Naruto, One Piece, and Dragon Ball Z).--
+CREATE TABLE THE_BIG4
+AS (SELECT abilities.anime_name, anime.MAL_SCORE, abilities.character_name, abilities.ability
+    FROM Anime, Abilities
+    WHERE abilities.anime_name = anime.name 
+    AND anime_id IN (17,27,28));
+    
+--Modifications to Big Three Anime table.--
+*RENAME TABLE THE_BIG4 TO THE_BIG3;*
+*ALTER TABLE THE_BIG3 
+ADD COLUMN description LONGTEXT;*
+*UPDATE THE_BIG3
+INNER JOIN Abilities ON THE_BIG3.anime_name = Abilities.anime_name
+SET THE_BIG3.Description = abilities.description
+WHERE THE_BIG3.character_name = Abilities.character_name;*
+*SELECT *
+FROM THE_BIG3;*
 
 
 
