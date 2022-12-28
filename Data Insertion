@@ -2,6 +2,13 @@
 be able to put in a protagonist until I have the same value in the character table. However, I can not add to the character table,
 without an anime_id. Therefore I will have to fill out the anime without the protagonist and fill in later.--
 
+--Mistakes--
+--I accidentally changed all of my Protagonists to Shinra Kusakabe using this UPDATE query.--
+UPDATE Anime JOIN Characters
+SET Protagonist = Characters.Name
+WHERE Characters.Name = 'Shinra Kusakabe';
+--I only wanted to change the Fire Force protagonist to Shinra Kusakabe. I now learned that the best measure when using UPDATE is to place it within a transaction so I could roll it back if anything occurs.--
+
 INSERT INTO Anime(Name,Release_Year,Genre,MAL_Score,Ongoing)
 VALUES('Fullmetal Alchemist: Brotherhood','2009','Action','9.21',0);
 *UPDATE Anime 
@@ -36,12 +43,13 @@ VALUES('Steins Gate',2011,'Sci-Fi','9.08',0),
 ('Ranking of Kings',2021,'Adventure','8.57',0),
 ('Bleach',2004,'Action','7.90',1),
 ('Dragon Ball Z',1989,'Action','8.16',0),
-('Naruto',2002,'Action','7.98',0)
+('Naruto',2002,'Action','7.98',0),
+('Fire Force',2019,'Action','7.71',1)
 
 --Data Insert into character table.--
 INSERT INTO Characters(Name,Initial_Age,Gender,Hair_Color,Anime_Id)
 VALUES('Edward Elric',16,'M','Blonde',2)
--- My Mass Insert--
+-- My Mass Insert (Specifically the Protaganists.--
 INSERT INTO Characters(Name,Initial_Age,Gender,Hair_Color,Anime_Id)
 VALUES('Rintaro Okabe',18,'M','Black',3),
 ('Gon Freecss',11,'M','Greenish Black',4),
@@ -68,7 +76,8 @@ VALUES('Rintaro Okabe',18,'M','Black',3),
 ('Bojji',13,'M','Black',25),
 ('Ichigo Kurosaki',15,'M','Orange',26),
 ('Goku',24,'M','Black',27),
-('Naruto Uzumaki',12,'M','Yellow',28)
+('Naruto Uzumaki',12,'M','Yellow',28),
+('Shinra Kusakabe',17,'M','Black',29)
 
 --After inserting the main protagonist of each show I put in. I used this query to update the protagonist column in
 the Anime table, all at once. I realized that after I start adding characters who are not the protagonist, 
