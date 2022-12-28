@@ -1,0 +1,114 @@
+If I wanted all the information from a table. (Ex. Anime table).
+
+SELECT * 
+FROM ANIME;
+
+If I wanted to find certain animes that came out after or before a certain release year.
+(You can add the = to those operators to do less than and equal or greater than and equal to.)
+
+SELECT *
+FROM ANIME
+WHERE Release_Year > 2015;
+------------------------------------------
+SELECT *
+FROM ANIME
+WHERE Release_Year < 2015;
+
+Its a similar process for animes that were released in between certain years. 
+
+SELECT *
+FROM ANIME
+WHERE Release_Year BETWEEN 2012 AND 2019;
+
+You could also ORDER those results in ascending or descending. 
+
+SELECT *
+FROM ANIME
+WHERE Release_Year BETWEEN 2012 AND 2019
+ORDER BY Release_Year DESC;
+
+And then add on a second thing to ORDER by if there are similar results. So we can also order by name.
+
+SELECT *
+FROM ANIME
+WHERE Release_Year BETWEEN 2012 AND 2019
+ORDER BY Release_Year DESC, Name;
+
+You can also query information with multiple WHERE conditions to narrow down your search even farther. (I will use the character table for these next couple of examples.)
+
+SELECT *
+FROM characters
+WHERE Initial_Age BETWEEN 15 AND 20 AND Hair_Color Like '%Black%'
+ORDER BY Anime_id,Name;
+(For this query I used the AND operator within the WHERE to only have outcomes that contain both of those conditions.)
+---------------------------------------------------------------------
+SELECT *
+FROM characters
+WHERE Initial_Age BETWEEN 17 AND 20 OR Hair_Color <> 'Black'
+ORDER BY Initial_Age,Hair_Color;
+(This query is set up similar to the one above, however uses the OR operator. This means if a record does not fit one of the conditions it can still be queried if it matches the other query.)
+
+AGGREGATION
+Simple COUNT function that will count how many animes there are in the table.
+
+SELECT COUNT(*)
+FROM anime
+
+Adding GROUP BY will allow the count to then be classified by what is specified such as Genre.
+
+SELECT Genre,COUNT(*)
+FROM anime
+GROUP BY Genre;
+
+AVG or Average function will find the average number for whatever column you indicate.
+
+SELECT AVG(Release_Year)
+FROM anime;
+--------------------------
+SELECT AVG(Initial_Age)
+FROM characters;
+
+JOINS
+Depending on the join, you will bring together two tables. What shows in the table will depend on what type of join you do.
+
+Inner Join will bring together table records that have matching values in both tables.
+
+SELECT *
+FROM Anime 
+INNER JOIN Abilities
+ON Anime.name = Abilities.Anime_Name
+ORDER BY anime.name;
+
+Left Join brings all the outcomes of the left table (Anime) regardless of matching with the right table.
+SELECT *
+FROM Anime 
+LEFT JOIN Abilities
+ON Anime.name = Abilities.Anime_Name
+
+Right Join brings all the outcomes of the right table (Abilities) regardless of matching with the left table.
+SELECT *
+FROM Anime 
+RIGHT JOIN Abilities
+ON Anime.name = Abilities.Anime_Name
+ORDER BY anime.name;
+
+Full/Outer Join can not be done in Mysql. However, can be overrided by doing a UNION of a right and left join.
+This will bring all the outcomes of each table not paying attention to any matching. 
+SELECT *
+FROM Anime 
+RIGHT JOIN Abilities
+ON Anime.name = Abilities.Anime_Name
+UNION
+SELECT *
+FROM Anime 
+LEFT JOIN Abilities
+ON Anime.name = Abilities.Anime_Name
+ORDER BY Anime_id;
+
+To narrow down the information you can place columns to specifically SELECT.
+SELECT anime.name,anime.Release_Year,anime.Mal_Score,abilities.character_name,abilities.ability,abilities.Description
+FROM Anime 
+RIGHT JOIN Abilities
+ON Anime.name = Abilities.Anime_Name
+ORDER BY anime.name,abilities.character_name;
+
