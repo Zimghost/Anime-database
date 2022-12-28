@@ -157,3 +157,25 @@ VALUES('Reg',NULL,'M','Black',18),
 ('Sakura Haruno',12,'F','Pink',28),
 ('Hinata Hyuga',12,'F','Dark Blue',28),
 ('Temari Nara',15,'F','Yellow',28)
+
+--Abilities Table Inserts. I also figured out how to do a quote within a word. ex. Lay's I would need to double
+quote it Lay''s.--
+INSERT INTO Abilities(Anime_Name, Character_Name, Ability, Description)
+VALUES('Dragon Ball Z','Goku','Kamehameha','The Kamehameha is formed when cupped hands are drawn to the user''s 
+side and ki is concentrated into a single point (between their cupped hands). The hands are then thrust forward 
+to shoot out a streaming, powerful beam of energy.')
+
+--More Abilities Inserts.--
+INSERT INTO Abilities(Anime_Name, Character_Name, Ability, Description)
+VALUES('Naruto','Naruto Uzumaki','Rasengan',' Essentially, the Rasengan consists of concentrating and rotating the chakra at a focal point on the user''s hand. The result is a spinning chakra sphere with immense destructive power.'),
+('Hajime no Ippo','Ippo Makunoichi','Dempsey Roll',' A roll of dodging shots swinging from left to right and using the thrust of his legs to spring on his opponent'),
+('Naruto','Sasuke Uchiha','Chidori','The Chidori is a high concentration of lightning chakra channelled around the user''s hand.'),
+('Dragon Ball Z','Future Trunks','Burning Attack','A series of hand signs in quick succession, then forms a diamond with his hands and fires a large ball of fire.'),
+('Code Geass: Lelouch of the Rebellion','Lelouch vi Britannia','Geass','Absolute Obedience'),
+('One Piece','Monkey D. Luffy','Gomu Gomu no pistol',' He stretches his arm back then throws a devastating punch.'),
+('One Piece','Trafalgar D. Water Law','ROOM','A spherical space around his targets, in which he can manipulate anything he wants in a variety of ways; he cannot perform any of his other techniques outside of this spherical area.'),
+('One Piece','Roronoa Zoro','1080 POUND CANNON','Zoro jumps into the air and, while air born, he raises two swords above shoulder height as he begins to twist his body, before unleashing three curved, air slashes. These three slashes fly through the air and as they eventually combine into one giant slash before striking the target.'),
+('One Piece','Roronoa Zoro','THREE SWORD STYLE SECRET SKILL: BILLION-FOLD WORLD TRICHILIOCOSM
+','Zoro, after being propelled in the air at an insane speed, begins to spin the swords in arms around, interchanging them between hands, as they gather more and more momentum. He then releases slash after slash with deadly accuracy, speed, and force.'),
+('Jujutsu Kaisen','Yuji Itadori','Consecutive Black Flashes
+','A distortion in space that occurs when cursed energy is applied within 0.000001 seconds of a physical hit. When a sorcerer is able to achieve this, their cursed energy flashes black, and the destructive power of their strike is equal to a normal hit to the power of 2.5.')
