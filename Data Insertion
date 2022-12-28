@@ -179,3 +179,36 @@ VALUES('Naruto','Naruto Uzumaki','Rasengan',' Essentially, the Rasengan consists
 ','Zoro, after being propelled in the air at an insane speed, begins to spin the swords in arms around, interchanging them between hands, as they gather more and more momentum. He then releases slash after slash with deadly accuracy, speed, and force.'),
 ('Jujutsu Kaisen','Yuji Itadori','Consecutive Black Flashes
 ','A distortion in space that occurs when cursed energy is applied within 0.000001 seconds of a physical hit. When a sorcerer is able to achieve this, their cursed energy flashes black, and the destructive power of their strike is equal to a normal hit to the power of 2.5.')
+
+--More Abilities Inserts.--
+INSERT INTO Abilities(Anime_Name, Character_Name, Ability, Description)
+VALUES('Naruto','Rock Lee','Eight Gates','Each additional gate grants the user new levels of strength with additional injuries; by opening all eight gates the user will become invincible in battle, but their body will be so damaged in the process that they will die afterwards.'),
+('Naruto','Kakashi Hatake','Kamui','Allows the user to transfer anything to another dimension. Once a target is sent to this dimension, it is unable to escape.'),
+('Naruto','Minato Namikaze','Flying Thunder God','To activate this technique, the user places a special seal or technique formula (術式, jutsu-shiki) to mark an intended destination. After this is done, they can enter a dimensional void at will that instantaneously transports them to the location of the seal.'),
+('Naruto','Hinata Hyuga','Byakugan','A dojutsu kekkei genkai which grants her near 360 degree vision (with the exception of a small blind spot at the upper thoracic vertebrate), x-ray vision and the ability to see the chakra pathway system.'),
+('Naruto','Sakura Haruno','Byakugo no Jutsu
+','This technique allows the user to heal immediately from any injury that they withstand without the need to even form hand seals. '),
+('Jujutsu Kaisen','Satoru Gojo','Unlimited Void','It creates a metaphysical space that causes the victims to receive all kinds of stimuli and information endlessly, restraining their thought processes and actions.'),
+('Jujutsu Kaisen','Satoru Gojo','Hollow Technique: Purple','Satoru snaps his fingers, combining "Blue" (attraction) and "Red" (repulsion), generating a long-ranged singularity where both effects are combined, deleting and erasing all matter in its path instantaneously.'),
+('Chainsaw Man','Denji','Chainsaw Protrusions','Denji is equipped with chainsaws that come out of both of his arms, which he can use to attack enemies.'),
+('Bleach','Ichigo Kurosaki','Getsuga Tensho','Ichigo reels Zangetsu back over his shoulder or above his head allowing Reishi to gather around Zangetus Blade Ichigo then performs a slashing motion and a wave of blue energy that retains all the sharpness and power of the blade .'),
+('Bleach','Ichigo Kurosaki','Bankai: Tensa Zangetsu',' Tensa Zangetsu instead shrinks its sword from into a Daito with a manji guard and black blade Ichigo also dons a ankle length black coat with red lining making him look similar to Zangetsu .');
+
+--More Abilities Insert.--
+INSERT INTO Abilities(Anime_Name, Character_Name, Ability, Description)
+VALUES('Dragon Ball Z','Goku','Spirit Bomb','The attack is used by absorbing the energy of anything living, and willing to give up energy.'),
+('Dragon Ball Z','Goku','Instant Transmission','Allows the user and anyone that is in physical contact with them to instantly travel great distances (from meters to light-years, between the living world and Other World, or even travel outside time itself) just by concentrating on a particular individual''s ki signature and transmitting or feeling that being''s location.'),
+('Dragon Ball Z','Gohan','Masenko','When the user thrusts their hands forward, they call the name and fire a beam of yellow, white, or orange energy.'),
+('Dragon Ball Z','Gohan','Father-Son Kamehameha','A Super Kamehameha that is empowerd by Goku''s spirit.'),
+('Hunter x Hunter 2011','Gon Freecss','Jajanken Rock','Gon focuses the aura around his fists using Ko and releases it in a punch engulfed within an intense flame.'),
+('Hunter x Hunter 2011','Gon Freecss','Jajanken Scissors','Gon uses Transmutation to transform his aura into a long blade of aura extending from the two fingers. '),
+('Hunter x Hunter 2011','Gon Freecss','Jajanken Paper','Gon uses his Emission abilities to project his aura towards his enemies as a projectile. Paper uses an open palm to emit the aura.'),
+('Hunter x Hunter 2011','Killua Zoldyck','Rhythm Echo','A motion that creates multiple afterimages of the practitioner''s body through a varying cadence of steps to confuse the opponent'),
+('Hunter x Hunter 2011','Killua Zoldyck','Godspeed',' Strength and speed are pushed to the max above his own limitations. This power can push the limit of Killua''s body as his power increases to a whole new level.'),
+('Hunter x Hunter 2011','Killua Zoldyck','Thunderbolt',' Projects a bolt of lightning from his fingers.'),
+('Hunter x Hunter 2011','Killua Zoldyck','Instant Reaction Time',' Killua reacts to all attacks automatically, so hitting him is extremely difficult if not nearly impossible.'),
+('Hunter x Hunter 2011','Kurapika','Holy Chain','The chain on Kurapika''s thumb can heal wounds by drawing from Kurapika''s latent Enhancer abilities.'),
+('Hunter x Hunter 2011','Kurapika','Chain Jail','The chain on Kurapika''s middle finger can wrap around people and restrict their movements. It also forcefully shuts off the Nen of its target, forcing them to escape through brute force alone.'),
+('Hunter x Hunter 2011','Kurapika','Dowsing Chain','The chain on Kurapika''s ring finger is used to track and locate things.'),
+('Hunter x Hunter 2011','Kurapika','Judgment Chain',' The chain on Kurapika''s little finger can only be used while his eyes are scarlet. When used, the chain will pierce through the victim''s chest and wrap around their heart.'),
+('Hunter x Hunter 2011','Kurapika','Steal Chain','The chain on Kurapika''s index finger has a syringe on the end, which Kurapika can stab a target with to drain their aura and force them into a state of Zetsu.');
