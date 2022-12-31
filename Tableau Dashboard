@@ -1,4 +1,4 @@
 This link is to access the dashboard I created for some of the stats within the anime database. 
 I used MYSQL workbench to query the data from the tables and export them as a csv file.
 Then I uploaded those files to Tableau and used that information to create visualizations and a dashboard.
-https://public.tableau.com/app/profile/nazim.tijani/viz/DifferentAnimeStatistics/DifferentAnimeStatistics?publish=yes
+https://public.tableau.com/views/DifferentAnimeStatistics/DifferentAnimeStatistics?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link
